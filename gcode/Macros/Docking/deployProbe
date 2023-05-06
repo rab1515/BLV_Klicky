@@ -1,0 +1,13 @@
+
+;M98 P"0:/macros/Docking/deployProbe"
+
+if sensors.probes[0].value[0] == 1000						;if probe is not connected;
+	G0 X{global.frontDock_x} Y{global.frontDock_y} F99999	;move infront of probe
+	G0 X{global.onDock_x} Y{global.onDock_y} F1800			;move onto probe						
+	G0 X{global.frontDock_x} Y{global.frontDock_y} F99999	;move infront of probe
+	M400 													;wait for moves to finish
+	if sensors.probes[0].value[0] == 1000					; probe failed to pick up
+		echo "ERROR picking up probe failed"
+		M18												;full stop
+else
+	echo "ERROR probe already attached"

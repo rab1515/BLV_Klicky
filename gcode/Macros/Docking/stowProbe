@@ -1,0 +1,11 @@
+;M98 P"0:/macros/Docking/stowProbe.g"
+if sensors.probes[0].value[0] == 0							;if probe is connected
+	G0 X{global.frontDock_x} Y{global.frontDock_y} F99999
+	G0 X{global.onDock_x} Y{global.onDock_y} F1800
+	G0 X{global.sideDock_x} Y{global.sideDock_y} F1800
+	M400													;wait to finishe moves
+	if sensors.probes[0].value[0] == 0						;if probe is still connected
+		echo "ERROR stowing probe failed"
+		M18
+else
+	echo "ERROR probe already detached"

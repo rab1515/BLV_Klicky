@@ -1,0 +1,11 @@
+var i = 0
+while {var.i}+1 < 30
+	echo var.i
+	M98 P"0:/Macros/Docking/deployProbe"
+	G30 P{var.i} X155 Y155 Z-9999
+	M98 P"0:/Macros/Docking/stowProbe"
+	set var.i = var.i+1
+echo var.i
+M98 P"0:/Macros/Docking/deployProbe"
+G30 P{var.i} X155 Y155 Z-9999 s-1
+M98 P"0:/Macros/Docking/stowProbe"
