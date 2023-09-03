@@ -1,13 +1,14 @@
 # BLV_Klicky
-Kicky probe implementation for the metal kit BLV cube
+Kicky probe and purge bucket implementation for the metal kit BLV cube
 
-![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/Photos/Capture1.PNG)
+![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/purge_bucket_klicky/photos/Capture.PNG)
 
 This probe is designed to fit the metal kit, with the NFSunrise hotend, most hotends will also work as well.
 
 # Print Settings
 Print in the orientation shown below:
 ![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/Photos/Capture3.PNG)
+![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/purge_bucket_klicky/photos/printOrientation.PNG)
 
 # Hardware
 
@@ -27,6 +28,7 @@ The threaded inserts get inserted into the probe dock base, everything else is p
 Please reference the Klicky repo for probe assembly instructions: https://github.com/jlas1/Klicky-Probe
 
 To assemble the purge bucket, glue and press 3x 3mmx6mm neodymium magnets to the bucket, then glue and place 3x magnets in the bracket, making sure to match polarity.
+The bucket bracket gets attached to the back rail using 2x m5x10 socket head screws and t-nuts.
 
 
 # Software
