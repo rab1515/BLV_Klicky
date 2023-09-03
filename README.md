@@ -7,7 +7,7 @@ This probe is designed to fit the metal kit, with the NFSunrise hotend, most hot
 
 # Print Settings
 Print in the orientation shown below:
-![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/Photos/Capture3.PNG)
+![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/klicky_probe/photos/Capture3.PNG)
 ![alt text](https://github.com/rab1515/BLV_Klicky/blob/main/purge_bucket_klicky/photos/printOrientation.PNG)
 
 # Hardware
