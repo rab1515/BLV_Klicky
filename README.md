@@ -49,7 +49,7 @@ Restart your board for changes to take effect, and test out the macros. Should  
 
 `repeatability test` runs 30 docks/undocks with a move in between to test repeatability of the probe. My installation gave a maximum deviation of 0.013 mm with a standard deviation of 0.003 mm .
 
-##Purge Bucket config
+#Purge Bucket config
 To use the purge bucket, use the `moveToPurgeBucket` and `wipe` macros inside your start/pause gcode. Mine are proveded as an example. I split my pre starting gcode into 2 seprate files,  `startPrintPostHeat.g` and `startPrintPreHeat.g`. My slicer start gcode is set to: 
 ```
 M98 P"0:/sys/startPrintPreHeat.g"
