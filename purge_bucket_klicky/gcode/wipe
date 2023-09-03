@@ -1,0 +1,2 @@
+;M98 P"0:/macros/PurgeBucket/wipe"
+G0 X{global.sideBox_x} Y{global.sideBox_y} F1800			; wipe

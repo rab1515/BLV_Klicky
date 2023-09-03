@@ -1,0 +1,8 @@
+;M98 P"0:/macros/PurgeBucket/moveToPurgeBucket"
+if move.axes[0].machinePosition != {global.inBox_x} || move.axes[1].machinePosition != {global.inBox_y}	;check if already in purge bucket
+	G90
+	if move.axes[1].machinePosition > {global.preEntry_y}
+		G0 Y{global.preEntry_y} F99999
+	;G0 X{global.preEntry_x} Y{global.preEntry_y} F99999		;move to left foward corner
+	G0 X{global.frontBox_x} Y{global.frontBox_y} F99999 	;move right front corner
+	G0 X{global.inBox_x} Y{global.inBox_y} F99999			;move into box

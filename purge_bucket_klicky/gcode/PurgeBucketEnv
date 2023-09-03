@@ -1,0 +1,11 @@
+global inBox_x = 297
+global inBox_y = 322
+
+global frontBox_x  = {global.inBox_x}
+global frontBox_y = {global.inBox_y}-17
+
+global sideBox_x = {global.inBox_x}-17
+global sideBox_y = {global.inBox_y}
+
+global preEntry_x = {global.inBox_x}-17
+global preEntry_y = {global.inBox_y}-17
