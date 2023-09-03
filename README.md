@@ -26,17 +26,20 @@ The threaded inserts get inserted into the probe dock base, everything else is p
 
 Please reference the Klicky repo for probe assembly instructions: https://github.com/jlas1/Klicky-Probe
 
+To assemble the purge bucket, glue and press 3x 3mmx6mm neodymium magnets to the bucket, then glue and place 3x magnets in the bracket, making sure to match polarity.
+
+
 # Software
 
 The macros were written for RepRap firmware 3.4.5, previous versions may not work.
 
 These macros are intended to be an example, and might need to be modified for your printer.
 
-Create a folder in the `Macros` directory called `Docking`. Place `deployProbe`, `stowProbe`, and `DockEnv` into that folder.
+Create a folder in the `Macros` directory called `Docking`. Place `deployProbe`, `stowProbe`, and `DockEnv` into that folder. If using the purge bucket, do the same for the purge bucket macros placing them a created purge bucket folder.
 
-Edit `DockEnv` to change the `onDock_x` and `onDock_y` to match your docks mounted location. It WILL need to be on the back wall with room to the negative X direction to work with out modification. If necessary you can flip the sign on the `sideDock_x` variable
+Edit `DockEnv` to change the `onDock_x` and `onDock_y` to match your docks mounted location. It WILL need to be on the back wall with room to the negative X direction to work with out modification. If necessary you can flip the sign on the `sideDock_x` variable. If using the purge bucket edit the `PurgeBucketEnv` macro and set `inBox_x` `inBox_y`.
 
-add `M98 P"0:/macros/Docking/DockEnv"` to your `config.g`. This will load the variables that define where your dock is. While editing the `config.g` update your z probe config, I pluged my probe into `Z_PROBE_IN` so my config was `M558 P5 C"zprobe.in" H3 F300 T99999`. 
+add `M98 P"0:/macros/Docking/DockEnv"` to your `config.g`. This will load the variables that define where your dock is. While editing the `config.g` update your z probe config, I pluged my probe into `Z_PROBE_IN` so my config was `M558 P5 C"zprobe.in" H3 F300 T99999`. If useing teh purge bucket, add `M98 P"0:/macros/PurgeBucket/PurgeBucketEnv"` to your `config.g`
 
 Edit your `homeall.g` AND your `homez.g` in your system folder to reflect the new z probe. My `homeall.g` calls `homez.g` and are provided as an example.
 
