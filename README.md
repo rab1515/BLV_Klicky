@@ -28,7 +28,7 @@ The threaded inserts get inserted into the probe dock base, everything else is p
 Please reference the Klicky repo for probe assembly instructions: https://github.com/jlas1/Klicky-Probe
 
 To assemble the purge bucket, glue and press 3x 3mmx6mm neodymium magnets to the bucket, then glue and place 3x magnets in the bracket, making sure to match polarity.
-The bucket bracket gets attached to the back rail using 2x m5x10 socket head screws and t-nuts.
+The bucket bracket gets attached to the back rail using 2x m5x10 socket head screws and t-nuts. Cut a piece of 2mm thick silicone to 15mm by 13mm and place it in the slot of the purge bucket.
 
 
 # Software
@@ -49,3 +49,15 @@ Restart your board for changes to take effect, and test out the macros. Should  
 
 `repeatability test` runs 30 docks/undocks with a move in between to test repeatability of the probe. My installation gave a maximum deviation of 0.013 mm with a standard deviation of 0.003 mm .
 
+##Purge Bucket config
+To use the purge bucket, use the `moveToPurgeBucket` and `wipe` macros inside your start/pause gcode. Mine are proveded as an example. I split my pre starting gcode into 2 seprate files,  `startPrintPostHeat.g` and `startPrintPreHeat.g`. My slicer start gcode is set to: 
+```
+M98 P"0:/sys/startPrintPreHeat.g"
+M140 S60.0 ;Start heating bed
+M190 S60.0 ;Wait for bed to reach temp before proceeding
+M104 S230 ;Start heating extruder
+M109 S230 ;Wait for extruder to reach temp before proceeding
+M98 P"0:/sys/startPrintPostHeat.g"
+```
+
+See also my pause and resume macros.
