@@ -1,0 +1,8 @@
+global onDock_x = 326
+global onDock_y = 322
+
+global frontDock_x = {global.onDock_x}
+global frontDock_y = {global.onDock_y} - 45
+
+global sideDock_x = {global.onDock_x} - 35
+global sideDock_y = {global.onDock_y}
